@@ -10,8 +10,12 @@ require_once __DIR__ . '/../src/templates/partials/html_head.php';
 ?>
 <body>
 
-<div>
-    <h1>Home page</h1>
+
+
+<div id="navBar">
+    <p>Boursarama Banque</p>
+    <p>Connection</p>
+    <p> <a href="inscriptionUser.php">Inscription</a></p>
 </div>
 
 <?php require_once __DIR__ . '/../src/templates/partials/footer.php'; ?>
