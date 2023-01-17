@@ -7,6 +7,8 @@
 -- Server version: 5.7.24
 -- PHP Version: 8.1.0
 
+SET NAMES utf8;
+SET foreign_key_checks = 0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
