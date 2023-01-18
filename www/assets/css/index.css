@@ -4,5 +4,5 @@
 }
 
 body {
-    background-image: url('../images/banque_centrale.png');
+    background: url("../images/banque_centrale.png") no-repeat center;
 }

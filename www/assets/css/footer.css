@@ -14,7 +14,7 @@ section {
     width: 100vw;
     padding-top: 40px;
     color: #fff;
-    position: absolute;
+    position: relative;
 }
 
 .footer-content {
