@@ -16,7 +16,7 @@ require_once __DIR__ . '/../src/templates/partials/html_head.php';
     <p>Boursarama Banque</p>
     <p> <a href="connexion.php">Connexion</a></p>
     <p> <a href="inscriptionUser.php">Inscription</a></p>
-    <p> <a href="admin.php"></a></p>
+    <p> <a href="depot.php"></a></p>
 </div>
 
 <?php require_once __DIR__ . '/../src/templates/partials/footer.php'; ?>

@@ -29,9 +29,11 @@ if(!empty($_POST['logMail']) && !empty($_POST['logPass'])) {
         $checkRole = $role->fetch();
         // print_r($checkRole[0]);
         if($checkRole[0] == "admin"){
-            echo'<p>admin</p>';
+
+            header('Location: http://phpbanque/phpBanque/www/admin.php');
         }else{
-            echo'<p>Utilisateur</p>';
+
+            header('Location: http://phpbanque/phpBanque/www/Users/depot.php');
         }
         
         // echo "<p>inscrit</p>";
