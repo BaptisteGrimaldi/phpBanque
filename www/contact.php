@@ -18,7 +18,38 @@ require_once __DIR__ . '/../src/init.php';
     </head>
         <body>
             <?php require_once __DIR__ . '/../src/templates/partials/html_header.php'; ?>
-            <div>
+            
+            <div class="container">
+                <div class="contact-box">
+                    <div class="left"></div>
+                    <?= show_error(); ?>
+                    <div class="right">
+                        <h2>Nous Contacter</h2>
+                        <input type="text" class="field" placeholder="Votre Nom">
+                        <input type="text" class="field" placeholder="Votre Email">
+                        <input type="text" class="field" placeholder="Votre Téléphone">
+                        <textarea class="field area" placeholder="Message"></textarea>
+                        <button class="btn">Envoyer</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+                       
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <!--<div>
                 <h1>Contact</h1>
 
                 
@@ -45,7 +76,7 @@ require_once __DIR__ . '/../src/init.php';
                     </div>
                     <button type="submit">Envoyer</button>
                 </form>
-            </div>
+            </div>-->
 
     <?php require_once __DIR__ . '/../src/templates/partials/html_footer.php'; ?>
     </body>
