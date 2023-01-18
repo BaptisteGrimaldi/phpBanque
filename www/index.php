@@ -4,8 +4,6 @@ require_once __DIR__ . '/../src/init.php';
 // $db
 // $_SESSION
 
-$page_title = 'Home page';
-
 ?>
 
 <!DOCTYPE html>
