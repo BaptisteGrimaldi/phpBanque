@@ -36,7 +36,7 @@ $page_title = 'Admin';
         <label for="destinataire"> Destinataire Adresse Mail</label>
         <input type="text" name="destinataire">
 
-        <label for="description">Message </label>
+        <label for="description">Message</label>
         <input type="text" name="description">
 
         
