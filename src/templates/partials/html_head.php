@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="/assets/css/style.css">
     </head>
-    <body>
+    <header>
         <div class="menu_bar">
             <h1 class="logo">Banque<span>Centrale</span></h1>
     
@@ -17,18 +17,18 @@
                 <li><a href="my_space.php">Mon Espace<i class="fas fa-caret-down"></i></a>
                     <div class="dropdown_menu">
                         <ul>
-                            <li><a href="#">Bank Accounts</a></li>
-                            <li><a href="#">Currencies</a></li>
-                            <li><a href="#">Transaction</a></li>
-                            <li><a href="#">Deposits</a></li>
-                            <li><a href="#">Withdrawals</a></li>
+                            <li><a href="bankaccounts.php">Comptes Bancaires</a></li>
+                            <li><a href="currencies.php">Devises</a></li>
+                            <li><a href="transaction.php">Transaction</a></li>
+                            <li><a href="deposits.php">Dépôts</a></li>
+                            <li><a href="withdrawals.php">Retraits</a></li>
                             <li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="contact.php">Contact Us</a></li>   
+                <li><a href="contact.php">Nous Contacter</a></li>   
                 <li><a href="profile.php"><i class="fa-solid fa-user"></i></a></li>
             </ul>
         </div>
-    </body>
+    </header>
 </html>
