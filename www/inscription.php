@@ -29,7 +29,10 @@ require_once __DIR__ . '/../src/init.php';
                         <input type="email" for="email" name="inMail" class="field" placeholder="Confirmer">
                         <input type="password" for="password" name="inPass" class="field" placeholder="Mot de Passe">
                         <input type="password" for="password" name="inPass" class="field" placeholder="Confirmer">
-                        <button class="btn">Valider</button>
+                        <div class="ecartor">
+                            <button class="btn">Valider</button>
+                            <button><a class="btn_change" href="connexion.php">Se Connecter</a></button>
+                        </div>
                     </div>
                 </form>
             </div>

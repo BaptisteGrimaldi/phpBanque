@@ -23,12 +23,12 @@ require_once __DIR__ . '/../src/init.php';
             <div class="contact-box">
                 <div class="left"></div>
                 <?= show_error(); ?>
-                <form action="">
+                <form action="./actions/send_contact.php" method="post">
                     <div class="right">
                         <h2>Nous Contacter</h2>
-                        <input type="text" class="field" placeholder="Votre Nom">
-                        <input type="text" class="field" placeholder="Votre Email">
-                        <input type="text" class="field" placeholder="Votre Téléphone">
+                        <input type="text" class="field" placeholder="Nom">
+                        <input type="text" class="field" placeholder="Email">
+                        <input type="text" class="field" placeholder="Téléphone">
                         <textarea class="field area" placeholder="Message"></textarea>
                         <button class="btn">Envoyer</button>
                     </div>

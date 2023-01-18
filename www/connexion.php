@@ -27,7 +27,10 @@ require_once __DIR__ . '/../src/init.php';
                         <h2>Connexion</h2>
                         <input type="email" for="conecMail" name="logMail" class="field" placeholder="Email">
                         <input type="password" for="conecMail" name="logMail" class="field" placeholder="Mot de Passe">
-                        <button class="btn">Valider</button>
+                        <div class="ecartor">
+                            <button class="btn">Valider</button>
+                            <button><a class="btn_change" href="inscription.php">S'Inscrire</a></button>
+                        </div>
                     </div>
                 </form>
             </div>
