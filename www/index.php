@@ -20,7 +20,29 @@ require_once __DIR__ . '/../src/init.php';
     <body>
         <?php require_once __DIR__ . '/../src/templates/partials/html_header.php'; ?>
     
-
+        <div class="infos">
+            <div class="infos_numbers">
+                <div class="img_1">
+                    <h3>a</h3>
+                </div>
+                <div class="img_2">
+                    <h3>g</h3>
+                    <h3>g</h3>
+                    <h3>g</h3>
+                    <h3>g</h3>
+                    <h3>g</h3>
+                    <h3>g</h3>
+                    <h3>g</h3>
+                    <h3>g</h3>
+                    <h3>g</h3><h3>g</h3>
+                    <h3>g</h3>
+                    <h3>g</h3>
+                    <h3>g</h3>
+                    <h3>g</h3>
+                    <h3>g</h3><h3>g</h3><h3>g</h3><h3>g</h3><h3>z</h3>
+                </div>
+            </div>
+        </div>
 
         <?php require_once __DIR__ . '/../src/templates/partials/html_footer.php'; ?>
     </body>

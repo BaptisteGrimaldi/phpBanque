@@ -18,7 +18,7 @@
             </ul>
         </div>
         <div class="footer-bottom">
-            <p>Copyright &copy; <?= date('Y'); ?> Banque Centrale. designed by <span>Scorpioffi, Ryzku and Bapt</span></p>
+            <p>Copyright &copy; <?= date('Y'); ?> Banque Centrale. designed by <span>Scorpioffi, RyzKu and Bapt</span></p>
         </div>
       </section>
     </footer>
