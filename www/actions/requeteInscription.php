@@ -9,16 +9,17 @@ if(!empty($_POST['inMail']) && !empty($_POST['inPass'])) {
     $password = $_POST['inPass'];
     if(filter_var($email, FILTER_VALIDATE_EMAIL)){
         // Préparation de la requête
-        $query = "INSERT INTO users (email, password, role, created_at, last_ip) VALUES (:email, :password, :role, NOW(), :last_ip)";
+        $query = "INSERT INTO users (email, password, role, created_at, last_ip, bankaccounts) VALUES (:email, :password, :role, NOW(), :last_ip , :bankaccounts )";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $password);
-        $stmt->bindValue(':role', 5, PDO::PARAM_INT);
+        $stmt->bindValue(':role', 'user_no_verify', PDO::PARAM_STR);
         $last_ip = $_SERVER['REMOTE_ADDR'];
         if (!filter_var($last_ip, FILTER_VALIDATE_IP)) {
         $last_ip = "0.0.0.0";
         }
         $stmt->bindParam(':last_ip', $last_ip);
+        $stmt->bindValue(':bankaccounts', 0 , PDO::PARAM_INT);
         $stmt->execute();
     }else{
         echo 'email n\'est pas valide';

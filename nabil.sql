@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le : mer. 18 jan. 2023 à 10:54
--- Version du serveur : 5.7.36
--- Version de PHP : 7.4.26
+-- Hôte : localhost:8889
+-- Généré le : mer. 18 jan. 2023 à 09:24
+-- Version du serveur :  5.7.34
+-- Version de PHP : 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `phpbanque`
+-- Base de données : `projetbank`
 --
 
 -- --------------------------------------------------------
@@ -27,15 +27,13 @@ SET time_zone = "+00:00";
 -- Structure de la table `contact_forms`
 --
 
-DROP TABLE IF EXISTS `contact_forms`;
-CREATE TABLE IF NOT EXISTS `contact_forms` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `contact_forms` (
+  `id` int(11) NOT NULL,
   `fullname` varchar(100) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `monnaie` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8;
+  `monnaie` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `contact_forms`
@@ -63,8 +61,7 @@ INSERT INTO `contact_forms` (`id`, `fullname`, `phone`, `created_at`, `monnaie`)
 -- Structure de la table `currencies`
 --
 
-DROP TABLE IF EXISTS `currencies`;
-CREATE TABLE IF NOT EXISTS `currencies` (
+CREATE TABLE `currencies` (
   `id_monnaie` int(11) NOT NULL,
   `nom_monnaie` int(11) NOT NULL,
   `taux_change` varchar(255) NOT NULL
@@ -76,16 +73,13 @@ CREATE TABLE IF NOT EXISTS `currencies` (
 -- Structure de la table `deposits`
 --
 
-DROP TABLE IF EXISTS `deposits`;
-CREATE TABLE IF NOT EXISTS `deposits` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `deposits` (
+  `id_user` int(11) NOT NULL,
   `id_role` int(11) NOT NULL,
   `date_depos` datetime NOT NULL,
   `monnaie` int(11) NOT NULL,
   `description_depot` varchar(255) NOT NULL,
-  `id_depo` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  `id_depo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -94,16 +88,14 @@ CREATE TABLE IF NOT EXISTS `deposits` (
 -- Structure de la table `transactions`
 --
 
-DROP TABLE IF EXISTS `transactions`;
-CREATE TABLE IF NOT EXISTS `transactions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `transactions` (
+  `id_user` int(11) NOT NULL,
   `montant_depot` int(100) NOT NULL,
   `date_depos` datetime NOT NULL,
   `date_retrait` datetime NOT NULL,
   `description_depot` varchar(255) NOT NULL,
   `montant_retrait` int(100) NOT NULL,
-  `id_transaction` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  `id_transaction` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -112,24 +104,14 @@ CREATE TABLE IF NOT EXISTS `transactions` (
 -- Structure de la table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id_user` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` varchar(255) NOT NULL,
+  `role` int(11) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `last_ip` text NOT NULL,
-  `bankaccounts` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `users`
---
-
-INSERT INTO `users` (`id`, `email`, `password`, `role`, `created_at`, `last_ip`, `bankaccounts`) VALUES
-(1, 'grimaldi.baptiste@gmail.com', 'Yolo2001ù', 'user_no_verify', '2023-01-18 11:53:41', '::1', 0);
+  `id_transaction` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -137,16 +119,82 @@ INSERT INTO `users` (`id`, `email`, `password`, `role`, `created_at`, `last_ip`,
 -- Structure de la table `withdrawals`
 --
 
-DROP TABLE IF EXISTS `withdrawals`;
-CREATE TABLE IF NOT EXISTS `withdrawals` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `withdrawals` (
+  `id_user` int(11) NOT NULL,
   `id_role` int(11) NOT NULL,
   `monnaie` varchar(200) NOT NULL,
   `date_retrait` datetime NOT NULL,
   `montant_retrait` int(11) NOT NULL,
-  `id_retrait` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  `id_retrait` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `contact_forms`
+--
+ALTER TABLE `contact_forms`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `deposits`
+--
+ALTER TABLE `deposits`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- Index pour la table `transactions`
+--
+ALTER TABLE `transactions`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- Index pour la table `withdrawals`
+--
+ALTER TABLE `withdrawals`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `contact_forms`
+--
+ALTER TABLE `contact_forms`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+
+--
+-- AUTO_INCREMENT pour la table `deposits`
+--
+ALTER TABLE `deposits`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `transactions`
+--
+ALTER TABLE `transactions`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `withdrawals`
+--
+ALTER TABLE `withdrawals`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
