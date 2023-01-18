@@ -11,7 +11,7 @@ require_once __DIR__ . '/../src/init.php';
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="assets/css/index.css">
+        <link rel="stylesheet" href="assets/css/currencies.css">
         <title>Banque Centrale</title>
         <link rel="shortcut icon" type="x-icon" href="assets/images/icon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

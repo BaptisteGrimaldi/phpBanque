@@ -13,7 +13,7 @@ $forms = $stmh->fetchAll();
 // $forms = [ ContactForm, ContactForm, ContactForm ]
 
 $page_title = 'Contact';
-require_once __DIR__ . '/../src/templates/partials/html_head.php';
+require_once __DIR__ . '/../src/templates/partials/html_header.php';
 
 ?>
 <body>
@@ -29,6 +29,6 @@ Date: <?= $form->getCreatedAt() ?><br />
 }
 ?>
 
-<?php require_once __DIR__ . '/../src/templates/partials/footer.php'; ?>
+<?php require_once __DIR__ . '/../src/templates/partials/html_footer.php'; ?>
 </body>
 </html>

@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../src/init.php';
 
 $page_title = 'DB Tests';
-require_once __DIR__ . '/../src/templates/partials/html_head.php';
+require_once __DIR__ . '/../src/templates/partials/html_header.php';
 
 ?>
 <body>

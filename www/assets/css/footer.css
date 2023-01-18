@@ -9,11 +9,12 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #212b38;
+    background: #2d415a;
     height: auto;
     width: 100vw;
     padding-top: 40px;
     color: #fff;
+    position: absolute;
 }
 
 .footer-content {
@@ -60,20 +61,8 @@ section {
     transition: color .4s ease;
 }
 
-.fa-discord:hover {
-    color: blueviolet;
-}
-
-.fa-youtube:hover {
-    color: red;
-}
-
-.fa-twitter:hover {
-    color: aqua;
-}
-
-.fa-instagram:hover {
-    color: orange;
+.fa-solid:hover {
+    color: #fa912e;
 }
 
 .footer-bottom {
