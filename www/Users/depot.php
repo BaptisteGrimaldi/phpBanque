@@ -41,6 +41,26 @@ $page_title = 'Admin';
 
     </form>
 
+    </br>
+
+    <form action="http://banquephp/phpBanque/www/actions/transaction.php" method='post'>
+        
+
+        <label for="argent">Montant à déposer</label>
+        <input type="text" name="montant">
+
+
+        <label for="destinataire">Destinataire Mail</label>
+        <input type="text" name="destinataire">
+
+        <label for="description">Message</label>
+        <input type="text" name="description">
+
+        <button type="submit">Envoyer</button>
+        
+
+    </form>
+
 </body>
 </html>
 
