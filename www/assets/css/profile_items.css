@@ -130,7 +130,7 @@ img {
     width: 100%;
     padding: 35px 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 20px;
 }
 
@@ -239,12 +239,10 @@ td i {
 
 .fa-check {
     background: green;
-    cursor: pointer;
 }
 
 .fa-xmark {
     background-color: red;
-    cursor: pointer;
 }
 
 @media(max-width:1090px) {

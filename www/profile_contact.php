@@ -11,7 +11,7 @@ require_once __DIR__ . '/../src/init.php';
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="assets/css/profile_admin_items.css">
+        <link rel="stylesheet" href="assets/css/profile_items.css">
         <title>Banque Centrale</title>
         <link rel="shortcut icon" type="x-icon" href="assets/images/icon.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -26,20 +26,32 @@ require_once __DIR__ . '/../src/init.php';
                 <ul>
                     <li>
                         <a href="#">
-                            <i class="fa-solid fa-user-secret"></i>
-                            <div class="title">Administration</div>
+                            <i class="fa-solid fa-user"></i>
+                            <div class="title">Mon Profil</div>
                         </a>
                     </li>
                     <li>
-                        <a href="profile_admin.php">
+                        <a href="profile.php">
                             <i class="fa-solid fa-wrench"></i>
                             <div class="title">Dashboard</div>
                         </a>
                     </li>
                     <li>
-                        <a href="profile_admin_deposits.php">
+                        <a href="profile_transactions.php">
+                            <i class="fa-solid fa-money-bill-transfer"></i>
+                            <div class="title">Transactions</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile_deposits.php">
                             <i class="fa-solid fa-piggy-bank"></i>
                             <div class="title">Dépots</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile_withdrawals.php">
+                            <i class="fa-solid fa-piggy-bank"></i>
+                            <div class="title">Retraits</div>
                         </a>
                     </li>
                     <li>
