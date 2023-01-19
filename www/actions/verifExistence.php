@@ -34,7 +34,7 @@ if(!empty($_POST['logMail']) && !empty($_POST['logPass'])) {
 
             $_SESSION['role'] = $checkRole[0];
 
-            header('Location:http://phpbanque/phpBanque/www/admin.php');
+            header('Location:http://banquephp/phpBanque/www/admin/admin.php');
         }else{
             $_SESSION['role'] = $checkRole[0];
             header('Location:http://banquephp/phpBanque/www/Users/depot.php');
