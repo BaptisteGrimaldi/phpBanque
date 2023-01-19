@@ -11,7 +11,7 @@ require_once __DIR__ . '/../src/init.php';
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="assets/css/profile_admin.css">
+        <link rel="stylesheet" href="assets/css/profile_admin_deposits.css">
         <title>Banque Centrale</title>
         <link rel="shortcut icon" type="x-icon" href="assets/images/icon.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -31,13 +31,13 @@ require_once __DIR__ . '/../src/init.php';
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="profile_admin.php">
                             <i class="fa-solid fa-wrench"></i>
                             <div class="title">Dashboard</div>
                         </a>
                     </li>
                     <li>
-                        <a href="profile_admin_deposits.php">
+                        <a href="#">
                             <i class="fa-solid fa-piggy-bank"></i>
                             <div class="title">Dépots</div>
                         </a>
@@ -67,40 +67,10 @@ require_once __DIR__ . '/../src/init.php';
                         <img src="assets/images/icon_user_default.png" alt="">
                     </div>
                 </div>
-                <div class="cards">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="number">7</div>
-                            <div class="card-name">Dépots en attente</div>
-                        </div>
-                        <div class="icon-box">
-                            <i class="fa-solid fa-piggy-bank"></i>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="number">4</div>
-                            <div class="card-name">Messages en attente</div>
-                        </div>
-                        <div class="icon-box">
-                            <i class="fa-solid fa-address-book"></i>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="number">3</div>
-                            <div class="card-name">Administrateurs</div>
-                        </div>
-                        <div class="icon-box">
-                            <i class="fa-solid fa-user-secret"></i>
-                        </div>
-                    </div>
-                </div>
                 <div class="tables">
                     <div class="last-appointments">
                         <div class="heading">
                             <h2>Dépots</h2>
-                            <a href="profile_admin_deposits.php" class="btn">Tout voir</a>
                         </div>
                         <table class="appointments">
                             <thead>
@@ -152,81 +122,6 @@ require_once __DIR__ . '/../src/init.php';
                                         <i class="fa-solid fa-check"></i>
                                         <i class="fa-solid fa-xmark"></i>
                                     </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="admin-visiting">
-                        <div class="heading">
-                            <h2>Administrateurs</h2>
-                        </div>
-                        <table class="visiting">
-                            <thead>
-                                <td></td>
-                                <td>Name</td>
-                                <td>Email</td>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="img-box-small">
-                                            <img src="assets/images/icon_user_default.png" alt="">
-                                        </div>
-                                    </td>
-                                    <td>Edouard</td>
-                                    <td>edouard@gmail.com</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="img-box-small">
-                                            <img src="assets/images/icon_user_default.png" alt="">
-                                        </div>
-                                    </td>
-                                    <td>Valérie</td>
-                                    <td>vecale@gmail.com</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="img-box-small">
-                                            <img src="assets/images/icon_user_default.png" alt="">
-                                        </div>
-                                    </td>
-                                    <td>Colombe</td>
-                                    <td>colombe@gmail.com</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="last-appointments">
-                        <div class="heading">
-                            <h2>Contact</h2>
-                            <a href="profile_admin_contact.php" class="btn">Tout voir</a>
-                        </div>
-                        <table class="visiting">
-                            <thead>
-                                <td>Nom</td>
-                                <td>Email</td>
-                                <td>Téléphone</td>
-                                <td>Message</td>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Léo</td>
-                                    <td>lv@gmail.com</td>
-                                    <td>0606060606</td>
-                                    <td>merci de me donner la moulaga ^^</td>
-                                </tr>
-                                <tr>
-                                    <td>Nabil</td>
-                                    <td>lv@gmail.com</td>
-                                    <td>0606060606</td>
-                                    <td>merci de me donner la moulaga ^^</td>
-                                </tr>
-                                <tr>
-                                    <td>Baptiste</td>
-                                    <td>lv@gmail.com</td>
-                                    <td>0606060606</td>
-                                    <td>merci de me donner la moulaga ^^</td>
                                 </tr>
                             </tbody>
                         </table>

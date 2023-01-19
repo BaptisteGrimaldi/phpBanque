@@ -176,11 +176,11 @@ img {
     overflow: hidden;
 }
 
-.last-appointments,
-.admin-visiting {
+.last-appointments {
     min-height: 350px;
     background: #fff;
     padding: 20px;
+    margin-top: 75px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
