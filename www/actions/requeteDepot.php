@@ -5,8 +5,10 @@
     $dsn = 'mysql:host=localhost;dbname=phpbanque;port=3306;charset=utf8';
     $pdo = new PDO($dsn, 'root', 'root');
 
-    $password = "Yolo2001ù";
-    $req = "SELECT `id` FROM `users` WHERE email = 'grimaldi.baptiste@gmail.com' AND password = '$password'";
+    $password = $_SESSION['pwd'];
+    $mail = $_SESSION['mail'];
+
+    $req = "SELECT `id` FROM `users` WHERE email = '$mail' AND password = '$password'";
 
     $reqId = $pdo->prepare($req);
     $reqId->execute();
@@ -14,27 +16,36 @@
 
     $_SESSION['id'] = $getId[0];
 
-    
-    $argent = $_POST['montant'];
-    $monaie = $_POST['monaie'];
-    $destinataire = $_POST['destinataire'];
-    $description = $_POST['description'];
+    if(isset($_POST['montant'], $_POST['monnaie'], $_POST['description'])){
+        $montant = $_POST['montant'];
+        $monnaie = $_POST['monnaie'];
+        $description = $_POST['description'];
+        $id_user = $_SESSION['id'];
+        $role = $_SESSION['role'];
 
-    // Vérification que les champs obligatoires ne sont pas vides
-    if (empty($argent) || empty($monaie) || empty($description)) {
-        echo "Veuillez remplir tous les champs obligatoires.";
-    } else {
-        // Préparation de la requête d'insertion
-        $stmt = $pdo->prepare("INSERT INTO transactions (montant, monaie, destinataire, description) VALUES (:argent, :monaie, :destinataire, :description)");
-        $stmt->bindParam(':argent', $argent);
-        $stmt->bindParam(':monaie', $monaie);
-        $stmt->bindParam(':description', $description);
+        $montantFinal = intval($montant);
 
-        // Exécution de la requête
-        if ($stmt->execute()) {
-            echo "Nouvelle transaction ajoutée avec succès";
-        } else {
-            echo "Erreur lors de l'ajout de la transaction.";
+        
+        // préparation de la requête
+        $stmt = $pdo->prepare("INSERT INTO deposits (role, date_depos, monnaie, montant, description_depot, id_user) 
+                                VALUES (:role, NOW(), :monnaie, :montant, :description_depot, :id_user)");
+        // liaison des paramètres
+        $stmt->bindParam(':role', $role);
+        $stmt->bindParam(':monnaie', $monnaie);
+        $stmt->bindParam(':montant', $montantFinal);
+        $stmt->bindParam(':description_depot', $description);
+        $stmt->bindParam(':id_user', $id_user);
+        // exécution de la requête
+        if($stmt->execute()){
+            // enregistrement réussi
+            echo "Le dépôt a été effectué avec succès.";
+        }else{
+            // enregistrement échoué
+            echo "Une erreur est survenue lors de l'enregistrement du dépôt.";
+            
         }
+    }else{
+        // les données du formulaire ne sont pas complètes
+        echo "Veuillez remplir tous les champs du formulaire.";
     }
 ?>
