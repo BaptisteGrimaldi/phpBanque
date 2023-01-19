@@ -16,8 +16,10 @@ if(!empty($_POST['logMail']) && !empty($_POST['logPass'])) {
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':password', $password);
+
     $varMail = $_SESSION['mail'] = $email;
     $varPwd = $_SESSION['pwd'] = $password;
+
     $stmt->execute();
     $user = $stmt->fetch();
     if($user) {
@@ -30,10 +32,12 @@ if(!empty($_POST['logMail']) && !empty($_POST['logPass'])) {
         // print_r($checkRole[0]);
         if($checkRole[0] == "admin"){
 
-            header('Location: http://phpbanque/phpBanque/www/admin.php');
-        }else{
+            $_SESSION['role'] = $checkRole[0];
 
-            header('Location: http://phpbanque/phpBanque/www/Users/depot.php');
+            header('Location:http://phpbanque/phpBanque/www/admin.php');
+        }else{
+            $_SESSION['role'] = $checkRole[0];
+            header('Location:http://banquephp/phpBanque/www/Users/depot.php');
         }
         
         // echo "<p>inscrit</p>";
