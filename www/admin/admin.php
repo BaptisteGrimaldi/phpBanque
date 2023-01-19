@@ -34,12 +34,6 @@ if(isset($_SESSION['response'])){
 
     $a = count($getDepot); 
 
-        // for($i=0 ; $i<$a;$i++){
-
-        //     print_r($getDepot[$i][0]);
-        
-        
-        // }
 
     for($i=0 ; $i<$a;$i++){
 
@@ -65,7 +59,11 @@ if(isset($_SESSION['response'])){
                 print_r('description_depot:'." ". $getDepot[$i][$r]." ");
             }
             if($r == 6){
-                print_r('id_user:'." ". $getDepot[$i][$r]." ");
+                print_r(' '.'id_user:'." ". $getDepot[$i][$r]);
+                echo ' ';
+                echo '<p>Valider</p>';
+                echo ' ';
+                echo '<p>Annuler</p>';
             }
               
         }
