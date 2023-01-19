@@ -19,16 +19,16 @@ $page_title = 'Admin';
 <!-- ///////////////////////////////////////////////////////////////////// -->
 
 <body>
-    <form action="./actions/requeteDepot.php">
+    <form action="http://banquephp/phpBanque/www/actions/requeteDepot.php">
         
 
         <label for="argent">Montant à déposer</label>
-        <input type="text" name="argent">
+        <input type="text" name="montant">
 
         <label for="ma_liste">Monnaie</label>
         <input list="ma_liste_options" id="ma_liste" name="monaie" >
         <datalist id="ma_liste_options">
-            <option value="bitcoin">Bitcoin</option>
+            <option value="Bitcoin">Bitcoin</option>
             <option value="Euro">Euro</option>
             <option value="Dollard">Dollard</option>
         </datalist>
@@ -39,6 +39,7 @@ $page_title = 'Admin';
         <label for="description">Message</label>
         <input type="text" name="description">
 
+        <button type="submit">Envoyer</button>
         
 
     </form>
