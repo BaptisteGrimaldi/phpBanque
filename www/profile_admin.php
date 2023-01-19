@@ -64,12 +64,113 @@ require_once __DIR__ . '/../src/init.php';
                 <div class="cards">
                     <div class="card">
                         <div class="card-content">
-                            <div class="num">67</div>
-                            <div class="card-name">Appointements</div>
+                            <div class="number">7</div>
+                            <div class="card-name">Dépots en attente</div>
                         </div>
                         <div class="icon-box">
-                            <i class="fas fa-briedcase-medical"></i>
+                            <i class="fa-solid fa-piggy-bank"></i>
                         </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="number">4</div>
+                            <div class="card-name">Messages en attente</div>
+                        </div>
+                        <div class="icon-box">
+                            <i class="fa-solid fa-address-book"></i>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="number">3</div>
+                            <div class="card-name">Administrateurs</div>
+                        </div>
+                        <div class="icon-box">
+                            <i class="fa-solid fa-user-secret"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="tables">
+                <div class="last-appointments">
+                        <div class="heading">
+                            <h2>Dépots</h2>
+                            <a href="#" class="btn">Tout voir</a>
+                        </div>
+                        <table class="appointments">
+                            <thead>
+                                <td>Nom</td>
+                                <td>Email</td>
+                                <td>Actions</td>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Léo</td>
+                                    <td>leo@gmail.com</td>
+                                    <td>
+                                        <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Nabil</td>
+                                    <td>nabil@gmail.com</td>
+                                    <td>
+                                        <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Baptiste</td>
+                                    <td>baptiste@gmail.com</td>
+                                    <td>
+                                        <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="doctor-visiting">
+                        <div class="heading">
+                            <h2>Administrateurs</h2>
+                            <a href="#" class="btn">Tout voir</a>
+                        </div>
+                        <table class="visiting">
+                            <thead>
+                                <td></td>
+                                <td>Name</td>
+                                <td>Email</td>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="img-box-small">
+                                            <img src="assets/images/icon_user_default.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>Edouard</td>
+                                    <td>edouard@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="img-box-small">
+                                            <img src="assets/images/icon_user_default.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>Valérie</td>
+                                    <td>vecale@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="img-box-small">
+                                            <img src="assets/images/icon_user_default.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>Colombe</td>
+                                    <td>colombe@gmail.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
