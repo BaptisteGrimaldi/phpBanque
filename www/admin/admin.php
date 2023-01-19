@@ -7,7 +7,7 @@
 
 <form action="../actions/generationDepot.php" method="post">
   <input type="hidden" name="function_to_call" value="lol">
-  <input type="submit" value="Exécuter la fonction lol">
+  <input type="submit" value="Actualiser">
 </form>
 
 <h1><?php
@@ -21,7 +21,7 @@ if(isset($_SESSION['response'])){
 
 ?></h1>
 
-<h1>
+<div>
     
     <?php
     $dsn = 'mysql:host=localhost;dbname=phpbanque;port=3306;charset=utf8';
@@ -44,17 +44,38 @@ if(isset($_SESSION['response'])){
     for($i=0 ; $i<$a;$i++){
 
         
+        for($r=0;$r<7;$r++){
 
-        for($r=0;$r<6;$r++){
-
-            print_r($getDepot[$i][$r]);
+            if($r == 0){
+                print_r('id:'." ". $getDepot[$i][$r]." ");
+            }
+            if($r == 1){
+                print_r('role:'." ". $getDepot[$i][$r]." ");
+            }
+            if($r == 2){
+                print_r('date_depos:'." ". $getDepot[$i][$r]." ");
+            }
+            if($r == 3){
+                print_r('monnaie:'." ". $getDepot[$i][$r]." ");
+            }
+            if($r == 4){
+                print_r('montant:'." ". $getDepot[$i][$r]." ");
+            }
+            if($r == 5){
+                print_r('description_depot:'." ". $getDepot[$i][$r]." ");
+            }
+            if($r == 6){
+                print_r('id_user:'." ". $getDepot[$i][$r]." ");
+            }
+              
         }
+        echo'<br></br>';
         
     }
 
 
 
     ?>
-</h1>
+</div>
     
 </body>
