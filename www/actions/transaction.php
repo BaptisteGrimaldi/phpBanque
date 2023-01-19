@@ -47,27 +47,27 @@
 //         if(!$receiver_id){
 //             throw new Exception("Invalid receiver's email");
 //         }
-//         //Check if the sender has enough balance
-//         $stmt = $pdo->prepare("SELECT balance FROM users WHERE id = :sender_id ");
+//         //Check if the sender has enough bankaccounts
+//         $stmt = $pdo->prepare("SELECT bankaccounts FROM users WHERE id = :sender_id ");
 //         $stmt->bindParam(':sender_id', $sender_id);
 //         $stmt->execute();
 //         $sender_balance = $stmt->fetchColumn();
 //         if($sender_balance < $amount){
-//             throw new Exception("Insufficient balance");
+//             throw new Exception("Insufficient bankaccounts");
 //         }
-//         //update sender's balance
+//         //update sender's bankaccounts
 //         $new_balance = $sender_balance - $amount;
-//         $stmt = $pdo->prepare("UPDATE users SET balance = :new_balance WHERE id = :sender_id");
+//         $stmt = $pdo->prepare("UPDATE users SET bankaccounts = :new_balance WHERE id = :sender_id");
 //         $stmt->bindParam(':new_balance', $new_balance);
 //         $stmt->bindParam(':sender_id', $sender_id);
 //         $stmt->execute();
-//         //update receiver's balance
-//         $stmt = $pdo->prepare("SELECT balance FROM users WHERE id = :receiver_id ");
+//         //update receiver's bankaccounts
+//         $stmt = $pdo->prepare("SELECT bankaccounts FROM users WHERE id = :receiver_id ");
 //         $stmt->bindParam(':receiver_id', $receiver_id);
 //         $stmt->execute();
 //         $receiver_balance = $stmt->fetchColumn();
 //         $new_balance = $receiver_balance + $amount;
-//         $stmt = $pdo->prepare("UPDATE users SET balance = :new_balance WHERE id = :receiver_id");
+//         $stmt = $pdo->prepare("UPDATE users SET bankaccounts = :new_balance WHERE id = :receiver_id");
 //         $stmt->bindParam(':new_balance', $new_balance);
 //         $stmt->bindParam(':receiver_id', $receiver_id);
 //         $stmt->execute();
@@ -97,27 +97,27 @@ function makeTransaction($pdo, $sender_id, $receiver_email, $amount, $descriptio
         if(!$receiver_id){
             throw new Exception("Invalid receiver's email");
         }
-        //Check if the sender has enough balance
-        $stmt = $pdo->prepare("SELECT balance FROM users WHERE id = :sender_id ");
+        //Check if the sender has enough bankaccounts
+        $stmt = $pdo->prepare("SELECT bankaccounts FROM users WHERE id = :sender_id ");
         $stmt->bindParam(':sender_id', $sender_id);
         $stmt->execute();
         $sender_balance = $stmt->fetchColumn();
         if($sender_balance < $amount){
-            throw new Exception("Insufficient balance");
+            throw new Exception("Insufficient bankaccounts");
         }
-        //update sender's balance
+        //update sender's bankaccounts
         $new_balance = $sender_balance - $amount;
-        $stmt = $pdo->prepare("UPDATE users SET balance = :new_balance WHERE id = :sender_id");
+        $stmt = $pdo->prepare("UPDATE users SET bankaccounts = :new_balance WHERE id = :sender_id");
         $stmt->bindParam(':new_balance', $new_balance);
         $stmt->bindParam(':sender_id', $sender_id);
         $stmt->execute();
-        //update receiver's balance
-        $stmt = $pdo->prepare("SELECT balance FROM users WHERE id = :receiver_id ");
+        //update receiver's bankaccounts
+        $stmt = $pdo->prepare("SELECT bankaccounts FROM users WHERE id = :receiver_id ");
         $stmt->bindParam(':receiver_id', $receiver_id);
         $stmt->execute();
         $receiver_balance = $stmt->fetchColumn();
         $new_balance = $receiver_balance + $amount;
-        $stmt = $pdo->prepare("UPDATE users SET balance = :new_balance WHERE id = :receiver_id");
+        $stmt = $pdo->prepare("UPDATE users SET bankaccounts = :new_balance WHERE id = :receiver_id");
         $stmt->bindParam(':new_balance', $new_balance);
         $stmt->bindParam(':receiver_id', $receiver_id);
         $stmt->execute();
