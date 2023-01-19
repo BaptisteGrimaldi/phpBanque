@@ -100,12 +100,14 @@ require_once __DIR__ . '/../src/init.php';
                             <thead>
                                 <td>Nom</td>
                                 <td>Email</td>
+                                <td>Montant</td>
                                 <td>Actions</td>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>Léo</td>
                                     <td>leo@gmail.com</td>
+                                    <td>250€</td>
                                     <td>
                                         <i class="fa-solid fa-check"></i>
                                         <i class="fa-solid fa-xmark"></i>
@@ -114,6 +116,7 @@ require_once __DIR__ . '/../src/init.php';
                                 <tr>
                                     <td>Nabil</td>
                                     <td>nabil@gmail.com</td>
+                                    <td>300$</td>
                                     <td>
                                         <i class="fa-solid fa-check"></i>
                                         <i class="fa-solid fa-xmark"></i>
@@ -122,6 +125,7 @@ require_once __DIR__ . '/../src/init.php';
                                 <tr>
                                     <td>Baptiste</td>
                                     <td>baptiste@gmail.com</td>
+                                    <td>84£</td>
                                     <td>
                                         <i class="fa-solid fa-check"></i>
                                         <i class="fa-solid fa-xmark"></i>
