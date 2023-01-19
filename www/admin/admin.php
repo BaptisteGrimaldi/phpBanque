@@ -21,7 +21,7 @@ if(isset($_SESSION['response'])){
 
 ?></h1>
 
-<div>
+<div id = "depot">
     
     <?php
     $dsn = 'mysql:host=localhost;dbname=phpbanque;port=3306;charset=utf8';
@@ -61,9 +61,9 @@ if(isset($_SESSION['response'])){
             if($r == 6){
                 print_r(' '.'id_user:'." ". $getDepot[$i][$r]);
                 echo ' ';
-                echo '<p>Valider</p>';
+                echo '<button id="validate-btn">Valider</button>';
                 echo ' ';
-                echo '<p>Annuler</p>';
+                echo '<button id="cancel-btn">Annuler</button>';
             }
               
         }
@@ -75,5 +75,16 @@ if(isset($_SESSION['response'])){
 
     ?>
 </div>
+
+<script>
+
+    var value = document.getElementById("depot").innerHTML;
+
+    document.getElementById("validate-btn").addEventListener("click", function(){
+        fetch('http://banquephp/phpBanque/www/admin/aceptDepot.php', {
+            method: 'GET'
+        })
+    });
+</script>
     
 </body>

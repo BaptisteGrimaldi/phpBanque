@@ -43,10 +43,34 @@ $page_title = 'Admin';
 
     </br>
 
+    <form action="http://banquephp/phpBanque/www/actions/requeteRetrait.php" method='post'>
+        
+
+        <label for="argent">Montant à retirer</label>
+        <input type="text" name="montant">
+
+        <label for="ma_liste">Monnaie</label>
+        <input list="ma_liste_options" id="ma_liste" name="monnaie" >
+        <datalist id="ma_liste_options">
+            <option value="Bitcoin">Bitcoin</option>
+            <option value="Euro">Euro</option>
+            <option value="Dollard">Dollard</option>
+        </datalist>
+
+        <label for="description">Message</label>
+        <input type="text" name="description">
+
+        <button type="submit">Envoyer</button>
+        
+
+    </form>
+
+    </br>
+
     <form action="http://banquephp/phpBanque/www/actions/transaction.php" method='post'>
         
 
-        <label for="argent">Montant à déposer</label>
+        <label for="argent">Montant à envoyer</label>
         <input type="text" name="montant">
 
 
