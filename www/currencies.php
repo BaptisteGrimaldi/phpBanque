@@ -19,8 +19,18 @@ require_once __DIR__ . '/../src/init.php';
     
     <body>
         <?php require_once __DIR__ . '/../src/templates/partials/html_header.php'; ?>
-    
 
+        <section class="currencies">
+            <div class="center">
+                <h2>Devises</h2>
+            </div>
+
+            <div class="currencies-content">
+                <img src="assets/images/image_euro.png" alt="image_euro.png introuvable">
+                <img src="assets/images/money_gta.png" alt="money_gta.png introuvable">
+                <img src="assets/images/image_bitcoin.png" alt="image_bitcoin.png introuvable">
+            </div>
+        </section>
 
         <?php require_once __DIR__ . '/../src/templates/partials/html_footer.php'; ?>
     </body>

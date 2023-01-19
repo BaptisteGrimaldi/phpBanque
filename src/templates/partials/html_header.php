@@ -13,14 +13,14 @@
     
             <ul>
                 <li><a href="index.php">Accueil</a></li>     
-                <li><a href="my_space.php">Mon Espace<i class="fas fa-caret-down"></i></a>
+                <li><a href="#">Mon Espace<i class="fas fa-caret-down"></i></a>
                     <div class="dropdown_menu">
                         <ul>
                             <li><a href="bankaccounts.php">Comptes Bancaires</a></li>
                             <li><a href="currencies.php">Devises</a></li>
                             <li><a href="transaction.php">Transaction</a></li>
-                            <li><a href="deposits.php">Dépôts</a></li>
-                            <li><a href="withdrawals.php">Retraits</a></li>
+                            <li><a href="deposits.php">Dépôt</a></li>
+                            <li><a href="withdrawals.php">Retrait</a></li>
                             <li>
                         </ul>
                     </div>
