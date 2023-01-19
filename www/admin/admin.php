@@ -20,5 +20,41 @@ if(isset($_SESSION['response'])){
 }
 
 ?></h1>
+
+<h1>
+    
+    <?php
+    $dsn = 'mysql:host=localhost;dbname=phpbanque;port=3306;charset=utf8';
+    $pdo = new PDO($dsn, 'root', 'root');
+    $query = "SELECT * FROM `deposits`";
+
+    $reqDepot = $pdo->prepare($query);
+    $reqDepot->execute();
+    $getDepot = $reqDepot->fetchAll();
+
+    $a = count($getDepot); 
+
+        // for($i=0 ; $i<$a;$i++){
+
+        //     print_r($getDepot[$i][0]);
+        
+        
+        // }
+
+    for($i=0 ; $i<$a;$i++){
+
+        
+
+        for($r=0;$r<6;$r++){
+
+            print_r($getDepot[$i][$r]);
+        }
+        
+    }
+
+
+
+    ?>
+</h1>
     
 </body>

@@ -2,8 +2,6 @@
 
 function lol(){
 
-    
-
     session_start();
     $response = 'test';
     $_SESSION['response'] = $response;
