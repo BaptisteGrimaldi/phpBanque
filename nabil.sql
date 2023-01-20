@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jan 19, 2023 at 05:44 PM
--- Server version: 5.7.24
--- PHP Version: 8.0.1
+-- Hôte : localhost:8889
+-- Généré le : mer. 18 jan. 2023 à 09:24
+-- Version du serveur :  5.7.34
+-- Version de PHP : 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `phpbanque`
+-- Base de données : `projetbank`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact_forms`
+-- Structure de la table `contact_forms`
 --
 
 CREATE TABLE `contact_forms` (
@@ -36,7 +36,7 @@ CREATE TABLE `contact_forms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `contact_forms`
+-- Déchargement des données de la table `contact_forms`
 --
 
 INSERT INTO `contact_forms` (`id`, `fullname`, `phone`, `created_at`, `monnaie`) VALUES
@@ -58,7 +58,7 @@ INSERT INTO `contact_forms` (`id`, `fullname`, `phone`, `created_at`, `monnaie`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `currencies`
+-- Structure de la table `currencies`
 --
 
 CREATE TABLE `currencies` (
@@ -70,82 +70,57 @@ CREATE TABLE `currencies` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `deposits`
+-- Structure de la table `deposits`
 --
 
 CREATE TABLE `deposits` (
-  `id` int(11) NOT NULL,
-  `role` varchar(255) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_role` int(11) NOT NULL,
   `date_depos` datetime NOT NULL,
-  `monnaie` varchar(100) NOT NULL,
-  `montant` int(11) NOT NULL,
+  `monnaie` int(11) NOT NULL,
   `description_depot` varchar(255) NOT NULL,
-  `id_user` int(11) NOT NULL
+  `id_depo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transactions`
+-- Structure de la table `transactions`
 --
 
 CREATE TABLE `transactions` (
-  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `montant_depot` int(100) NOT NULL,
   `date_depos` datetime NOT NULL,
   `date_retrait` datetime NOT NULL,
   `description_depot` varchar(255) NOT NULL,
   `montant_retrait` int(100) NOT NULL,
-  `id_transaction` int(11) NOT NULL,
-  `sender_id` int(11) NOT NULL,
-  `receiver_id` int(11) NOT NULL
+  `id_transaction` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` varchar(255) NOT NULL,
+  `role` int(11) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `last_ip` text NOT NULL,
-  `bankaccounts` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `email`, `password`, `role`, `created_at`, `last_ip`, `bankaccounts`) VALUES
-(1, 'grimaldi.baptiste@gmail.com', 'Yolo2001ù', 'user_no_verify', '2023-01-18 11:53:41', '::1', 0),
-(2, 'nabil@gmail.com', 'nabil95300', 'user_no_verify', '2023-01-19 14:17:29', '::1', 0),
-(4, 'nabil@gmail.com', 'nabil95300', 'user_no_verify', '2023-01-19 16:10:57', '::1', 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_transactions`
---
-
-CREATE TABLE `user_transactions` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `transaction_id` int(11) NOT NULL
+  `id_transaction` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `withdrawals`
+-- Structure de la table `withdrawals`
 --
 
 CREATE TABLE `withdrawals` (
-  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `id_role` int(11) NOT NULL,
   `monnaie` varchar(200) NOT NULL,
   `date_retrait` datetime NOT NULL,
@@ -154,107 +129,72 @@ CREATE TABLE `withdrawals` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `contact_forms`
+-- Index pour la table `contact_forms`
 --
 ALTER TABLE `contact_forms`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `deposits`
+-- Index pour la table `deposits`
 --
 ALTER TABLE `deposits`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `transactions`
+-- Index pour la table `transactions`
 --
 ALTER TABLE `transactions`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `sender_id` (`sender_id`),
-  ADD KEY `receiver_id` (`receiver_id`);
+  ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `users`
+-- Index pour la table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `user_transactions`
---
-ALTER TABLE `user_transactions`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `transaction_id` (`transaction_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `withdrawals`
+-- Index pour la table `withdrawals`
 --
 ALTER TABLE `withdrawals`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `contact_forms`
+-- AUTO_INCREMENT pour la table `contact_forms`
 --
 ALTER TABLE `contact_forms`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
--- AUTO_INCREMENT for table `deposits`
+-- AUTO_INCREMENT pour la table `deposits`
 --
 ALTER TABLE `deposits`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `transactions`
+-- AUTO_INCREMENT pour la table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `user_transactions`
---
-ALTER TABLE `user_transactions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `withdrawals`
+-- AUTO_INCREMENT pour la table `withdrawals`
 --
 ALTER TABLE `withdrawals`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `transactions`
---
-ALTER TABLE `transactions`
-  ADD CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`sender_id`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `transactions_ibfk_2` FOREIGN KEY (`receiver_id`) REFERENCES `users` (`id`);
-
---
--- Constraints for table `user_transactions`
---
-ALTER TABLE `user_transactions`
-  ADD CONSTRAINT `user_transactions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `user_transactions_ibfk_2` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`id`),
-  ADD CONSTRAINT `user_transactions_ibfk_3` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

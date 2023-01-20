@@ -75,11 +75,18 @@ class DbManager {
     }
 
     function update(string $tableName, array $data) {
-
+        $var = $this->db->prepare('UPDATE '.$tableName.' SET fullname = ?, phone = ?, email = ?, message = ? WHERE id = ?');
+        $var->execute($data);
+        $var->setFetchMode(PDO::FETCH_CLASS, $tableName);
+        $variable = $var->fetch();
+        return $variable;
     }
 
     function update_advanced(DbObject $dbObj) {
-
+        $var = $this->db->prepare('UPDATE '.$dbObj.' SET fullname = ?, phone = ?, email = ?, message = ? WHERE id = ?');
+        $var->setFetchMode(PDO::FETCH_CLASS, $dbObj);
+        $variable = $var->fetch();
+        return $variable;
     }
 
 }

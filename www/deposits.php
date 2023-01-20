@@ -22,10 +22,10 @@ require_once __DIR__ . '/../src/init.php';
         <div class="container">
             <div class="contact-box">
                 <?= show_error(); ?>
-                <form action = "./actions/verifExistence.php" method="post">
+                <form action = "http://banquephp/phpBanque/www/actions/requeteDepot.php" method="post">
                     <div class="right">
                         <h2>Dépots</h2>
-                        <input type="email" for="conecMail" name="logMail" class="field" placeholder="Montant">
+                        <input type="text" for="argent" name="montant" class="field" placeholder="Montant">
                         <input type="password" for="conecMail" name="logMail" class="field" placeholder="Devise">
                         <div class="ecartor">
                             <button class="btn">Envoyer la demande</button>

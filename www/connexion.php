@@ -23,10 +23,10 @@ require_once __DIR__ . '/../src/init.php';
             <div class="contact-box">
                 <?= show_error(); ?>
                 <form action = "./actions/verifExistence.php" method="post">
-                    <div class="right">
+                    <div class="right" id="login">
                         <h2>Connexion</h2>
                         <input type="email" for="conecMail" name="logMail" class="field" placeholder="Email">
-                        <input type="password" for="conecMail" name="logMail" class="field" placeholder="Mot de Passe">
+                        <input type="password" for="conecPassword" name="logPass" class="field" placeholder="Mot de Passe">
                         <div class="ecartor">
                             <button class="btn">Valider</button>
                             <button><a class="btn_change" href="inscription.php">S'Inscrire</a></button>
