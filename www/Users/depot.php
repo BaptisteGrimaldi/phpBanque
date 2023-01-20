@@ -21,7 +21,7 @@ $page_title = 'Admin';
 <body>
     <form action="http://phpbanque/phpBanque/www/actions/requeteDepot.php" method='post'>
         
-
+        <h2>A DEPOSER</h2>
         <label for="argent">Montant à déposer</label>
         <input type="text" name="montant">
 
@@ -45,7 +45,7 @@ $page_title = 'Admin';
 
     <form action="http://phpbanque/phpBanque/www/actions/requeteRetrait.php" method='post'>
         
-
+        <h2>A RETIRER</h2>
         <label for="argent">Montant à retirer</label>
         <input type="text" name="montant">
 
@@ -69,7 +69,7 @@ $page_title = 'Admin';
 
     <form action="http://phpbanque/phpBanque/www/actions/transaction.php" method='post'>
         
-
+        <h2>A ENVOYER</h2>
         <label for="argent">Montant à envoyer</label>
         <input type="text" name="montant">
 
