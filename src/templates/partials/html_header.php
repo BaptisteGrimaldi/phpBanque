@@ -27,6 +27,7 @@
                 </li>
                 <li><a href="contact.php">Nous Contacter</a></li>   
                 <li><a href="inscription.php"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="connexion.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </div>
     </header>

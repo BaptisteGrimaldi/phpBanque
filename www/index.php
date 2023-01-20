@@ -19,30 +19,47 @@ require_once __DIR__ . '/../src/init.php';
     
     <body>
         <?php require_once __DIR__ . '/../src/templates/partials/html_header.php'; ?>
-    
-        <div class="infos">
-            <div class="infos_numbers">
-                <div class="img_1">
-                    <h3>a</h3>
+
+        <section class="team">
+            <div class="center">
+                <h2>L'Équipe</h2>
+            </div>
+
+            <div class="team-content">
+                <div class="box">
+                    <img src="assets/images/logo_leo.png" alt="logo_leo.png introuvable">
+                    <h3>Léo VEJUX</h3>
+                    <h5>Developper / Srum Master</h5>
+                    <div class="icons">
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
                 </div>
-                <div class="img_2">
-                    <h3>g</h3>
-                    <h3>g</h3>
-                    <h3>g</h3>
-                    <h3>g</h3>
-                    <h3>g</h3>
-                    <h3>g</h3>
-                    <h3>g</h3>
-                    <h3>g</h3>
-                    <h3>g</h3><h3>g</h3>
-                    <h3>g</h3>
-                    <h3>g</h3>
-                    <h3>g</h3>
-                    <h3>g</h3>
-                    <h3>g</h3><h3>g</h3><h3>g</h3><h3>g</h3><h3>z</h3>
+
+                <div class="box">
+                    <img src="assets/images/logo_nabil.png" alt="logo_nabil.png introuvable">
+                    <h3>Nabil DAADAA</h3>
+                    <h5>Developper</h5>
+                    <div class="icons">
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="assets/images/logo_baptiste.png" alt="logo_baptiste.png introuvable">
+                    <h3>Baptiste GRIMALDI</h3>
+                    <h5>Developper</h5>
+                    <div class="icons">
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <?php require_once __DIR__ . '/../src/templates/partials/html_footer.php'; ?>
     </body>

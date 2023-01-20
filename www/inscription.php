@@ -22,7 +22,7 @@ require_once __DIR__ . '/../src/init.php';
         <div class="container">
             <div class="contact-box">
                 <?= show_error(); ?>
-                <form action = "./actions/requeteInscription.php" method="post">
+                <form action = "actions/requeteInscription.php" method="post">
                     <div class="right">
                         <h2>Inscription</h2>
                         <input type="email" for="email" name="inMail" class="field" placeholder="Email">

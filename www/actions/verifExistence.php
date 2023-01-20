@@ -35,10 +35,10 @@ if(!empty($_POST['logMail']) && !empty($_POST['logPass'])) {
 
             $_SESSION['role'] = $checkRole[0];
 
-            header('Location:http://phpbanque/phpBanque/www/admin/admin.php');
+            header('Location:../profile_admin.php');
         }else{
             $_SESSION['role'] = $checkRole[0];
-            header('Location:http://phpbanque/phpBanque/www/Users/depot.php');
+            header('Location:../profile.php');
         }
         
         // echo "<p>inscrit</p>";
