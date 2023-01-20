@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 20 jan. 2023 à 08:46
+-- Généré le : ven. 20 jan. 2023 à 11:07
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -86,14 +86,14 @@ CREATE TABLE IF NOT EXISTS `deposits` (
   `description_depot` varchar(255) NOT NULL,
   `id_user` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `deposits`
 --
 
 INSERT INTO `deposits` (`id`, `role`, `date_depos`, `monnaie`, `montant`, `description_depot`, `id_user`) VALUES
-(1, 'user_no_verify', '2023-01-20 09:33:10', 'Bitcoin', 3000, 'lol', 1);
+(6, 'user_no_verify', '2023-01-20 12:00:30', 'Bitcoin', 1000, 'lol', 1);
 
 -- --------------------------------------------------------
 
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `role`, `created_at`, `last_ip`, `bankaccounts`) VALUES
-(1, 'grimaldi.baptiste@gmail.com', 'Yolo2001ù', 'user_no_verify', '2023-01-18 11:53:41', '::1', -1000),
+(1, 'grimaldi.baptiste@gmail.com', 'Yolo2001ù', 'user_no_verify', '2023-01-18 11:53:41', '::1', 1000),
 (2, 'nabil@gmail.com', 'nabil95300', 'user_no_verify', '2023-01-19 14:17:29', '::1', 1000),
 (5, 'jetest@gmail.com', 'Inchala2001*', 'admin', '2023-01-20 09:38:48', '::1', 0);
 

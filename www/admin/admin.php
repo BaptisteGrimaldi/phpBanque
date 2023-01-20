@@ -21,8 +21,9 @@ if(isset($_SESSION['response'])){
 
 ?></h1>
 
-<div id = "depot">
+<div>
     
+
     <?php
     $dsn = 'mysql:host=localhost;dbname=phpbanque;port=3306;charset=utf8';
     $pdo = new PDO($dsn, 'root', 'root');
@@ -37,11 +38,15 @@ if(isset($_SESSION['response'])){
 
     for($i=0 ; $i<$a;$i++){
 
+        // print_r("<form action='./aceptDepot.php' method='post >");
+        echo '<form action=./aceptDepot.php method=post>';
         
         for($r=0;$r<7;$r++){
 
             if($r == 0){
-                print_r('id:'." ". $getDepot[$i][$r]." ");
+                print_r('<p>id:'." ". $getDepot[$i][$r]." ");
+                
+
             }
             if($r == 1){
                 print_r('role:'." ". $getDepot[$i][$r]." ");
@@ -60,10 +65,12 @@ if(isset($_SESSION['response'])){
             }
             if($r == 6){
                 print_r(' '.'id_user:'." ". $getDepot[$i][$r]);
-                echo ' ';
-                echo '<button id="validate-btn">Valider</button>';
+                echo '</p>';
+                echo '<input type=hidden name= depot value ='.$getDepot[$i][0].'>';
+                echo '<button type="submit">Valider</button>';
                 echo ' ';
                 echo '<button id="cancel-btn">Annuler</button>';
+                echo '</form>';
             }
               
         }
@@ -74,17 +81,8 @@ if(isset($_SESSION['response'])){
 
 
     ?>
+
 </div>
 
-<script>
-
-    var value = document.getElementById("depot").innerHTML;
-
-    document.getElementById("validate-btn").addEventListener("click", function(){
-        fetch('http://banquephp/phpBanque/www/admin/aceptDepot.php', {
-            method: 'GET'
-        })
-    });
-</script>
     
 </body>
