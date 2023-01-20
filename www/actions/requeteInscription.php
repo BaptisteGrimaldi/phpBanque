@@ -28,7 +28,7 @@ if(!empty($_POST['inMail']) && !empty($_POST['inPass'])) {
     echo 'email ou password est vide';
 }
 
-header('Location:http://banquephp/phpBanque/www/');
+header('Location:http://phpbanque/phpBanque/www/');
 
 
 ?>

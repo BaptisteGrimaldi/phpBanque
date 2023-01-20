@@ -19,7 +19,7 @@ $page_title = 'Admin';
 <!-- ///////////////////////////////////////////////////////////////////// -->
 
 <body>
-    <form action="http://banquephp/phpBanque/www/actions/requeteDepot.php" method='post'>
+    <form action="http://phpbanque/phpBanque/www/actions/requeteDepot.php" method='post'>
         
 
         <label for="argent">Montant à déposer</label>
@@ -43,7 +43,7 @@ $page_title = 'Admin';
 
     </br>
 
-    <form action="http://banquephp/phpBanque/www/actions/requeteRetrait.php" method='post'>
+    <form action="http://phpbanque/phpBanque/www/actions/requeteRetrait.php" method='post'>
         
 
         <label for="argent">Montant à retirer</label>
@@ -67,7 +67,7 @@ $page_title = 'Admin';
 
     </br>
 
-    <form action="http://banquephp/phpBanque/www/actions/transaction.php" method='post'>
+    <form action="http://phpbanque/phpBanque/www/actions/transaction.php" method='post'>
         
 
         <label for="argent">Montant à envoyer</label>
