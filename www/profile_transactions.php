@@ -93,7 +93,6 @@ require_once __DIR__ . '/../src/init.php';
                                 <td>Devise</td>
                                 <td>Date</td>
                                 <td>Description</td>
-                                <td>Status</td>
                             </thead>
                             <tbody>
                                 <tr>
@@ -104,9 +103,6 @@ require_once __DIR__ . '/../src/init.php';
                                     <td>euros</td>
                                     <td>19/01/2023 - 22:24</td>
                                     <td>Je souhaite déposer mon argent merci</td>
-                                    <td>
-                                        <i class="fa-solid fa-xmark"></i>
-                                    </td>
                                 </tr>
                                 <tr>
                                 <td>1</td>
@@ -116,9 +112,6 @@ require_once __DIR__ . '/../src/init.php';
                                     <td>euros</td>
                                     <td>19/01/2023 - 22:24</td>
                                     <td>Je souhaite déposer mon argent merci</td>
-                                    <td>
-                                        <i class="fa-solid fa-check"></i>
-                                    </td>
                                 </tr>
                                 <tr>
                                 <td>1</td>
@@ -128,9 +121,6 @@ require_once __DIR__ . '/../src/init.php';
                                     <td>euros</td>
                                     <td>19/01/2023 - 22:24</td>
                                     <td>Je souhaite déposer mon argent merci</td>
-                                    <td>
-                                        <i class="fa-solid fa-xmark"></i>
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>

@@ -26,8 +26,8 @@
                     </div>
                 </li>
                 <li><a href="contact.php">Nous Contacter</a></li>
-                <li><a href="profile_admin.php"><i class="fa-solid fa-user"></i></a></li>
-                <li><a href="connexion.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li><a onclick="profile_items.php"><i class="fa-solid fa-user"></i></a></li>
+                <li><a onclick="logout.php" href="connexion.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </div>
     </header>
