@@ -22,11 +22,17 @@ require_once __DIR__ . '/../src/init.php';
         <div class="container">
             <div class="contact-box">
                 <?= show_error(); ?>
-                <form action = "./actions/verifExistence.php" method="post">
+                <form action = "actions/requeteRetrait.php" method="post">
                     <div class="right">
                         <h2>Retrait</h2>
-                        <input type="email" for="conecMail" name="logMail" class="field" placeholder="Montant">
-                        <input type="password" for="conecMail" name="logMail" class="field" placeholder="Confirmer avec le mot de passe">
+                        <input type="text" for="argent" name="montant" class="field" placeholder="Montant">
+                        <input list="ma_liste_options" id="ma_liste" name="monnaie" class="field" placeholder="Devise">
+                            <datalist id="ma_liste_options">
+                                <option value="Euro">Euro</option>
+                                <option value="Dollard">Dollard</option>
+                                <option value="Bitcoin">Bitcoin</option>
+                            </datalist>
+                        <input type="text" for="description" name="description"" class="field" placeholder="Message">
                         <div class="ecartor">
                             <button class="btn">Valider</button>
                         </div>

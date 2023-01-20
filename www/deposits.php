@@ -22,11 +22,17 @@ require_once __DIR__ . '/../src/init.php';
         <div class="container">
             <div class="contact-box">
                 <?= show_error(); ?>
-                <form action = "http://banquephp/phpBanque/www/actions/requeteDepot.php" method="post">
+                <form action = "actions/requeteDepot.php" method="post">
                     <div class="right">
                         <h2>Dépots</h2>
                         <input type="text" for="argent" name="montant" class="field" placeholder="Montant">
-                        <input type="password" for="conecMail" name="logMail" class="field" placeholder="Devise">
+                        <input list="ma_liste_options" id="ma_liste" name="monnaie" class="field" placeholder="Devise">
+                            <datalist id="ma_liste_options">
+                                <option value="Euro">Euro</option>
+                                <option value="Dollard">Dollard</option>
+                                <option value="Bitcoin">Bitcoin</option>
+                            </datalist>
+                        <input type="text" for="description" name="description"" class="field" placeholder="Message">
                         <div class="ecartor">
                             <button class="btn">Envoyer la demande</button>
                         </div>

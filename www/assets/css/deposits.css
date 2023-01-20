@@ -81,6 +81,11 @@ h2:after {
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
+.option {
+	color: #444;
+	background-color: blue;
+}
+
 textarea {
 	min-height: 150px;
 }

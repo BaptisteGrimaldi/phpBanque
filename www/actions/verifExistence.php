@@ -1,4 +1,5 @@
 
+
 <?php 
 
 session_start();
@@ -34,10 +35,10 @@ if(!empty($_POST['logMail']) && !empty($_POST['logPass'])) {
 
             $_SESSION['role'] = $checkRole[0];
 
-            header('Location:http://banquephp/phpBanque/www/admin/admin.php');
+            header('Location:http://phpbanque/phpBanque/www/admin/admin.php');
         }else{
             $_SESSION['role'] = $checkRole[0];
-            header('Location:http://banquephp/phpBanque/www/Users/depot.php');
+            header('Location:http://phpbanque/phpBanque/www/Users/depot.php');
         }
         
         // echo "<p>inscrit</p>";

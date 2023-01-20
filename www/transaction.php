@@ -25,10 +25,9 @@ require_once __DIR__ . '/../src/init.php';
                 <form action = "./actions/requeteInscription.php" method="post">
                     <div class="right">
                         <h2>Transaction</h2>
-                        <input type="email" for="email" name="inMail" class="field" placeholder="Montant">
-                        <input type="email" for="email" name="inMail" class="field" placeholder="Devise">
-                        <input type="password" for="password" name="inPass" class="field" placeholder="Destinataire">
-                        <input type="password" for="password" name="inPass" class="field" placeholder="Confirmer avec votre mot de passe">
+                        <input type="text" for="argent" name="montant" class="field" placeholder="Montant">
+                        <input type="text" for="destinataire" name="destinataire" class="field" placeholder="Email du destinataire">
+                        <input type="text" for="description" name="description" class="field" placeholder="Message">
                         <div class="ecartor">
                             <button class="btn">Envoyer</button>
                         </div>
