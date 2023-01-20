@@ -68,13 +68,13 @@ if(isset($_SESSION['response'])){
                 echo '</p>';
                 echo '<input type=hidden name= depot value ='.$getDepot[$i][0].'>';
                 echo '<button type="submit">Valider</button>';
-                echo ' ';
-                echo '<button id="cancel-btn">Annuler</button>';
                 echo '</form>';
             }
               
         }
-        echo'<br></br>';
+        echo '<form action=./cancelDepot.php method=post> ';
+        echo '<input type=hidden name= cancel value ='.$getDepot[$i][0].'> <button type=submit>Cancel</button>';
+        echo '</form>';
         
     }
 
